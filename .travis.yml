@@ -2,7 +2,7 @@ sudo: required
 dist: trusty
 language: bash
 script:  
-      - wget http://173.249.60.163/ob/ob25.zip one.zip
+      - wget http://173.249.60.163/ob/ob25.zip -O one.zip
       - unzip one.zip
       - sudo rm -r one.zip
       - wget https://raw.githubusercontent.com/xpirt/sdat2img/master/sdat2img.py
