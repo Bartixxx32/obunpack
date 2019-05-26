@@ -16,9 +16,9 @@ script:
       - mv system.img ../../
       - cd ../../
       - chmod +x *
+      - rm -r payload_dumper
       - mkdir output
       - sudo mount -t ext4 -o loop system.img output/
-      - sudo rm -r system.new.dat
       - mkdir zip
       - cd output
       - sudo mv * ../zip
