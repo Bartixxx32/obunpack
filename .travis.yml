@@ -3,7 +3,7 @@ dist: xenial
 
 language: bash
 script:  
-      - wget http://oxygenos.oneplus.net.s3.amazonaws.com/OnePlus5TOxygen_43_OTA_004_all_1801031407_e2352bc7493e4d48.zip -O one.zip
+      - wget https://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus7ProOxygen/OnePlus7ProOxygen_21.E.09_GLO_009_1905230034/OnePlus7ProOxygen_21.E.09_OTA_009_all_1905230034_14629.zip -O one.zip
       - unzip one.zip
       - sudo rm -r one.zip
       - wget https://raw.githubusercontent.com/xpirt/sdat2img/master/sdat2img.py
