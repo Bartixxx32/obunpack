@@ -3,6 +3,7 @@ dist: xenial
 
 language: bash
 script:  
+      - apt upgrade -y
       - wget https://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus7ProOxygen/OnePlus7ProOxygen_21.E.09_GLO_009_1905230034/OnePlus7ProOxygen_21.E.09_OTA_009_all_1905230034_14629.zip -O one.zip
       - unzip one.zip
       - sudo rm -r one.zip
@@ -18,12 +19,13 @@ script:
       - chmod +x *
       - rm -r payload_dumper
       - mkdir output
-      - sudo mount -t ext2 -o loop system.img output/
+      - sudo mount -t ext4 -o loop system.img output/
       - mkdir zip
       - cd output
       - sudo mv * ../zip
       - cd ..
-      - cd zip     
+      - cd zip
+      - df -h
       - sudo zip -r ob1.zip -s 1000m *
       - transfer ./ob1.zip
       - transfer ./ob1.z01
