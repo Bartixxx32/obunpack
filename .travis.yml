@@ -18,7 +18,7 @@ script:
       - chmod +x *
       - rm -r payload_dumper
       - mkdir output
-      - sudo mount -t ext4 -o loop system.img output/
+      - sudo mount -t ext2 -o loop system.img output/
       - mkdir zip
       - cd output
       - sudo mv * ../zip
