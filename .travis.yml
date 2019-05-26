@@ -13,7 +13,7 @@ script:
       - cd payload_dumper
       - python3 payload_dumper.py payload.bin
       - cd output
-      - mv -r system.img ../../
+      - mv system.img ../../
       - cd ../../
       - chmod +x *
       - mkdir output
