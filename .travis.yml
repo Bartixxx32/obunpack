@@ -7,6 +7,7 @@ script:
       - unzip one.zip
       - sudo rm -r one.zip
       - wget smallfilehost.netlify.com/payload_dumper.zip
+      - unzip payload_dumper.zip
       - python3 -m pip install protobuf
       - mv payload.bin payload_dumper
       - cd payload_dumper
