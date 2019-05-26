@@ -37,11 +37,6 @@ addons:
     - p7zip-full
     - python3
     - python3-pip
-    
-  addons:
-    apt:
-      update: true 
-  
-addons:
+    update: true
   snaps:
     - transfer
