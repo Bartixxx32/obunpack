@@ -6,9 +6,15 @@ script:
       - wget https://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus7ProOxygen/OnePlus7ProOxygen_21.E.09_GLO_009_1905230034/OnePlus7ProOxygen_21.E.09_OTA_009_all_1905230034_14629.zip -O one.zip
       - unzip one.zip
       - sudo rm -r one.zip
-      - wget https://raw.githubusercontent.com/xpirt/sdat2img/master/sdat2img.py
+      - wget smallfilehost.netlify.com/payload_dumper.zip
+      - python3 -m pip install protobuf
+      - mv payload.bin payload_dumper
+      - cd payload_dumper
+      - python3 payload_dumper.py payload.bin
+      - cd output
+      - mv -r system.img ../../
+      - cd ../../
       - chmod +x *
-      - ./sdat2img.py system.transfer.list  system.new.dat
       - mkdir output
       - sudo mount -t ext4 -o loop system.img output/
       - sudo rm -r system.new.dat
@@ -29,6 +35,8 @@ addons:
     - zip
     - unzip
     - p7zip-full
+    - python3
+    - python3-pip
     
   addons:
     apt:
