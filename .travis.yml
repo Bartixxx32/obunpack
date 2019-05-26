@@ -27,9 +27,8 @@ script:
       - cd zip
       - ls
       - df -h
-      - sudo zip -r ob1.zip -s 1000m *
+      - sudo zip -r ob1.zip *
       - transfer ./ob1.zip
-      - transfer ./ob1.z01
       - echo done
 
 
